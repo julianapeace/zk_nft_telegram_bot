@@ -1,7 +1,8 @@
 # ZK NFT Bot for Telegram
-[Telegram Bot](https://t.me/zknft_bot)
+
 
 <p align="center">
+[Telegram Bot](https://t.me/zknft_bot)
   <img src="assets/illuminati-pizza-logo.png">
 </p>
 
