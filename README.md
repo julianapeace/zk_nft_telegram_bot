@@ -3,7 +3,6 @@
 [Telegram Bot](https://t.me/zknft_bot)
 
 <p align="center">
-  <a href="https://t.me/zknft_bot">Telegram Bot</a>
   <img src="assets/illuminati-pizza-logo.png">
 </p>
 
