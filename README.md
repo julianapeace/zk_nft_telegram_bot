@@ -8,11 +8,11 @@
 
 ## Prove your NFT ownership without revealing more than necessary and get validated to join exclusive channels
 
-## What is a proof?gi
+## What is a proof?
 A proof is your temporary private key, like a one-time pass code, that can be used to verify whether or not you own a specific NFT.
 
 ## How do I get a proof?
-Get a proof here <TODO: insert URL to frontend>
+Get a proof here **TODO** insert URL to frontend
 
 ## How to add this bot
 0. Linked here: [Telegram Bot](https://t.me/zknft_bot)
@@ -25,4 +25,4 @@ Get a proof here <TODO: insert URL to frontend>
 7. Profit
 
 ## I have an exclusive Telegram channel. How do I add use this bot's services?
-<TODO>
+**TODO**
