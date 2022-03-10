@@ -3,6 +3,10 @@
 
 ![zk nft](assets/illuminati-pizza-logo.png){ width="800" height="600" style="display: block; margin: 0 auto" }
 
+<p align="center">
+  <img src="assets/illuminati-pizza-logo.png">
+</p>
+
 ## Prove your NFT ownership without revealing more than necessary and get validated to join exclusive channels
 
 ## What is a proof?gi
