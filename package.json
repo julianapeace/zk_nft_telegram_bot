@@ -1,0 +1,20 @@
+{
+  "name": "zk-nft-telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "app": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.0",
+    "node-telegram-bot-api": "^0.56.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
