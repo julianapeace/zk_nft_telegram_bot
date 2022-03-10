@@ -10,7 +10,6 @@ const token = process.env.BOT_TOKEN;
 // connect to smart contract
 const provider = ethers.getDefaultProvider('kovan')
 const stakecontract = new ethers.Contract(
-  // config.Contract_Address,
   process.env.CONTRACT_ADDRESS,
   ZKSTAKE.abi,
   provider,
@@ -18,6 +17,37 @@ const stakecontract = new ethers.Contract(
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
+
+async function main(resp, chatId, bot) {
+  let valid = await checkWhitelist(resp);
+  console.log(`valid: ${valid}`)
+  if (valid && typeof valid === "boolean") {
+
+      console.log(`User is verified`);
+      bot.sendMessage(chatId, `User is verified`);
+    } else {
+      console.log(`Unable to verify user`);
+      bot.sendMessage(chatId, `Unable to verify user`);
+    }
+}
+
+async function checkWhitelist(message) {
+  try {
+    const decoded = new Buffer.from(message, 'hex').toString()
+    const params = JSON.parse(decoded.toString())
+    const r = await stakecontract.verifyIdentityChallenge(
+      params.challenge,
+      params.nullifierHash,
+      params.entityId,
+      params.proof,
+    )
+    return r
+  } catch (error) {
+    console.log(`Error: ${error}`);
+    return false
+  }
+
+}
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -35,11 +65,8 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 bot.onText(/\/verify (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
   const resp = match[1]; // the captured "whatever"
-  console.log(`chatId: ${chatId}`);
-  console.log(`resp: ${resp}`);
+  main(resp, chatId, bot)
 
-  // send back the matched "whatever" to the chat
-  bot.sendMessage(chatId, resp);
 });
 
 // Listen for any kind of message. There are different kinds of
